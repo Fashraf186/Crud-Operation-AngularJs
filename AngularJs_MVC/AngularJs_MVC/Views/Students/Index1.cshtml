@@ -1,0 +1,84 @@
+﻿@{
+    /**/
+
+    ViewBag.Title = "Index";
+}
+
+<!DocType html>
+<html>
+<head>
+
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script data-require="angular.js@1.0.x" src="http://code.angularjs.org/1.0.7/angular.min.js" data-semver="1.0.7"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-mocks.js"></script>
+    <script src="~/Scripts/myCntrl.js"></script>
+
+
+    <script src="~/Scripts/service.js"></script>
+
+
+
+</head>
+<body ng-app="rootApp" ng-controller="myCntrl">
+  
+    <div ng-controller="myCntrl">
+        <input type="button" class="btnAdd" value="Add Employee" ng-click="AddEmployeeDiv()" />
+        <table style="border:1px solid groove" ng-repeat="x in student">
+            <tr>
+                <th>StudentID</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>EnrollmentDate</th>
+                <th>Test</th>
+            </tr>
+            <tr>
+                <td>{{x.StudentID}}</td>
+                <td>{{x.FirstName}}</td>
+                <td>{{x.LastName}}</td>
+                <td>{{x.EnrollmentDate}}</td>
+            </tr>
+        </table>
+
+        <div ng-show="divEmployee">
+            <p class="divHead">{{Action}}Student</p>
+            <table>
+                <tr>
+                    <td><b>Id</b></td>
+                    <td>
+                        <input type="text" disabled="disabled" ng-model="StudentID" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Name</b></td>
+                    <td>
+                        <input type="text" ng-model="FirstName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Email</b></td>
+                    <td>
+                        <input type="text" ng-model="LastName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Age</b></td>
+                    <td>
+                        <input type="text" ng-model="EnrollmentDate" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" class="btnAdd" value="Save" ng-click="AddUpdateEmployee()" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+</body>
+</html>

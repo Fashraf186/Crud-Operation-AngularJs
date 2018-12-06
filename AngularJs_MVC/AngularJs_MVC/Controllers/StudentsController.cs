@@ -15,9 +15,15 @@ namespace AngularJs_MVC.Controllers
         private ProjectDataEntities db = new ProjectDataEntities();
 
         // GET: Students
+        public ActionResult Index1()  //TO Get all data from database and return as json
+        {
+           
+            return View();
+        }
         public JsonResult Index()  //TO Get all data from database and return as json
         {
-            return Json(db.Students.ToList(),JsonRequestBehavior.AllowGet);
+           IEnumerable<Student> student = db.Students.ToList();
+            return Json(student,JsonRequestBehavior.AllowGet);
         }
 
         // GET: Students/Details/5
